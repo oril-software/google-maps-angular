@@ -1,0 +1,42 @@
+:host{
+    padding: 0 40px;
+    margin: 20px 0 0;
+    display: block;
+}
+
+ul{
+
+    li{
+        margin: 10px 0;
+    }
+}
+
+.form{
+
+    label{
+        margin-bottom: 10px;
+    }
+
+    input{
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 5px 3px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    label{
+        display: block;
+    }
+    
+
+    button{
+        border: none;
+        cursor: pointer;
+        margin-left: 15px;
+        padding: 5px 15px;
+        font-size: 14px;
+        background-color: #eaeaea;;
+    }
+}

@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+import { NavComponent } from './components/nav/nav.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { GeneralModule } from 'projects/general/src/app/app.module';
+import { GeocodingModule } from 'projects/geocoding/src/app/app.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoogleMapsComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
+    GeneralModule.forRoot(),
+    GeocodingModule.forRoot(),
     AppRoutingModule,
-    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

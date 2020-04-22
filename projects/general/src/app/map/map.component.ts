@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { MapMarker, MapInfoWindow } from '@angular/google-maps';
 
 @Component({
-  selector: 'app-google-maps',
-  templateUrl: './google-maps.component.html',
-  styleUrls: ['./google-maps.component.scss']
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss']
 })
-export class GoogleMapsComponent implements OnInit {
+export class MapComponent implements OnInit {
 
   @ViewChild(MapInfoWindow, {static: false}) infoWindow: MapInfoWindow;
 

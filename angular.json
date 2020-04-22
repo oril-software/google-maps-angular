@@ -123,6 +123,249 @@
           }
         }
       }
-    }},
+    },
+    "general": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/general",
+      "sourceRoot": "projects/general/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/general",
+            "index": "projects/general/src/index.html",
+            "main": "projects/general/src/main.ts",
+            "polyfills": "projects/general/src/polyfills.ts",
+            "tsConfig": "projects/general/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/general/src/favicon.ico",
+              "projects/general/src/assets"
+            ],
+            "styles": [
+              "projects/general/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/general/src/environments/environment.ts",
+                  "with": "projects/general/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "general:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "general:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "general:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/general/src/test.ts",
+            "polyfills": "projects/general/src/polyfills.ts",
+            "tsConfig": "projects/general/tsconfig.spec.json",
+            "karmaConfig": "projects/general/karma.conf.js",
+            "assets": [
+              "projects/general/src/favicon.ico",
+              "projects/general/src/assets"
+            ],
+            "styles": [
+              "projects/general/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/general/tsconfig.app.json",
+              "projects/general/tsconfig.spec.json",
+              "projects/general/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/general/e2e/protractor.conf.js",
+            "devServerTarget": "general:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "general:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "geocoding": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/geocoding",
+      "sourceRoot": "projects/geocoding/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/geocoding",
+            "index": "projects/geocoding/src/index.html",
+            "main": "projects/geocoding/src/main.ts",
+            "polyfills": "projects/geocoding/src/polyfills.ts",
+            "tsConfig": "projects/geocoding/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/geocoding/src/favicon.ico",
+              "projects/geocoding/src/assets"
+            ],
+            "styles": [
+              "projects/geocoding/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/geocoding/src/environments/environment.ts",
+                  "with": "projects/geocoding/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "geocoding:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "geocoding:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "geocoding:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/geocoding/src/test.ts",
+            "polyfills": "projects/geocoding/src/polyfills.ts",
+            "tsConfig": "projects/geocoding/tsconfig.spec.json",
+            "karmaConfig": "projects/geocoding/karma.conf.js",
+            "assets": [
+              "projects/geocoding/src/favicon.ico",
+              "projects/geocoding/src/assets"
+            ],
+            "styles": [
+              "projects/geocoding/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/geocoding/tsconfig.app.json",
+              "projects/geocoding/tsconfig.spec.json",
+              "projects/geocoding/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/geocoding/e2e/protractor.conf.js",
+            "devServerTarget": "geocoding:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "geocoding:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "angular-maps"
 }

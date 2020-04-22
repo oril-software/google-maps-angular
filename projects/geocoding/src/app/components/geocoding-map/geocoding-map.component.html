@@ -1,0 +1,37 @@
+<h1>Geocoding</h1>
+
+<div class="form">
+  <label for="search">Search something</label>
+  <input id="search" placeholder="Tokyo" type="text" [(ngModel)]="address">
+  <button type="button" [disabled]="isLoading" (click)="searchByAddress()">Search</button>
+</div>
+
+<p><b>Note:</b> Double click to create a new marker.</p>
+
+<google-map 
+  width=100% 
+  (mapDblclick)="addMarker($event)"
+  [options]="mapOptions">
+
+  <map-marker
+    #markerElem
+    *ngFor="let marker of markers"
+    [position]="marker.position"
+    (mapClick)="openInfoWindow(marker, markerElem)"
+  >
+  </map-marker>
+
+  <map-info-window>
+    {{markerInfo}}
+  </map-info-window>
+</google-map>
+
+<div *ngIf="markers.length">
+  <h3>List of Locations</h3>
+  <ul>
+    <li *ngFor="let marker of markers">
+      {{marker.title}}
+    </li>
+  </ul>
+</div>
+
