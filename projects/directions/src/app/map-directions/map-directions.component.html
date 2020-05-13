@@ -1,0 +1,44 @@
+<h1>Directions</h1>
+
+<div class="content">
+  <div #mapElement class="map"></div>
+
+  <div class="form-wrapper">
+    <form class="form" [formGroup]="directionsForm">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Start point</mat-label>
+          <input matInput #origin formControlName="origin" type="text">
+        </mat-form-field>
+      </div>
+      <div formArrayName="waypoints" *ngFor="let waypoint of waypointsForm.controls; let i = index">
+        <div [formGroupName]="i" class="waypoint waypoint-{{i}}" >
+          <mat-form-field appearance="outline">
+            <mat-label>Waypoint {{i + 1}}</mat-label>
+            <input matInput formControlName="location" type="text" id="waypoint-{{i}}">
+            <mat-icon matSuffix (click)="removeWaypoint(i)">close</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Destination</mat-label>
+          <input matInput #destination formControlName="destination" type="text">
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="actions">
+      <button mat-raised-button color="primary" [disabled]="isLoading" (click)="buildRoute()">
+        Find a way</button>
+      <button mat-raised-button color="accent" [disabled]="isLoading" (click)="addWaypoint()">
+        Add waypoint
+      </button>
+    </div>
+
+    <div class="result" *ngIf="result">
+      <p>Distance - {{result.routes[0].legs[0].distance.text}}</p>
+      <p>Duration - {{result.routes[0].legs[0].duration.text}}</p>
+    </div>
+  </div>
+</div>

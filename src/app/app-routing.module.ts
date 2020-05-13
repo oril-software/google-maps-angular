@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GeneralModule } from 'projects/general/src/app/app.module';
 import { GeocodingModule } from 'projects/geocoding/src/app/app.module';
+import { DirectionsModule } from 'projects/directions/src/app/app.module';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'geocoding',
     loadChildren: 'projects/geocoding/src/app/app.module#GeocodingModule'
   },
+  {
+    path: 'directions',
+    loadChildren: 'projects/directions/src/app/app.module#DirectionsModule'
+  },
 ];
 
 @NgModule({
@@ -24,6 +29,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     GeocodingModule.forRoot(),
     GeneralModule.forRoot(),
+    DirectionsModule.forRoot(),
   ],
   exports: [RouterModule]
 })
