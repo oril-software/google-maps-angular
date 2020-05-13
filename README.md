@@ -1,27 +1,22 @@
-# AngularMaps
+# Angular Google Maps
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This is an example for using Angular 9 with Google Maps API.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. First of all you need to create a new Angular project. If you already have one, you can skip this step.
+```bash
+ng new angular-maps --routing
+```
+For more information visit [official documentation](https://angular.io/guide/setup-local).
 
-## Code scaffolding
+2. Go to your project and install this package.
+```bash
+npm install @angular/google-maps
+```
+3. Add `GoogleMapsModule` module to the import declaration in your AppModule or any other module where you want to use google maps.
+4. In `index.html` add this script `<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>`.
+5. The last you need is an API key, you can get it [here](https://developers.google.com/maps/documentation/javascript/get-api-key). 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
