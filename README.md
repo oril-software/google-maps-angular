@@ -3,7 +3,7 @@
 This is an example for using Angular 9 with Google Maps API.
 
 ## Prerequisites
-* [Node.js®](https://nodejs.org/en/download/) at least 10.x and an npm package manager.
+* [Node.js®](https://nodejs.org/en/download/) at least 10.x and a npm package manager.
 * Angular 9(if you have an earlier version, check out [this tutorial](https://angular.io/guide/updating-to-version-9))
 
 ## Installation
